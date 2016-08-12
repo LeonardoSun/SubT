@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="SubtitleTranslation.Part">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Part.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Form1" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAIAACBQAACCCAAAAAAAgAAAAAABQA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Program" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Segment" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAEAAIABQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Segment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Translate" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAIAAAAQAAAA=</HashCode>
+      <FileName>Translate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Properties.Resources" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.Properties.Settings" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.HeaderPart">
+    <Position X="0.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HeaderPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.ReturnPart">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReturnPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.NumPart">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAIAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NumPart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.LanguagePart">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAAAAAIAAQgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LanguagePart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.HeaderSeg">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HeaderSeg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.ContentSeg">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAIABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContentSeg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SubtitleTranslation.TimePart">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimePart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

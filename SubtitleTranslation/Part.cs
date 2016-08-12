@@ -5,7 +5,9 @@ using System.Text;
 
 namespace SubtitleTranslation
 {
-    class Part
+    public abstract class Part
     {
+        public abstract void Parse(string line);
+        public abstract void GetText(StringBuilder sb);
     }
 }
