@@ -14,7 +14,7 @@ namespace SubtitleTranslation
         public static string myurl = "/api/trans/vip/translate";
         public static async Task<string> Trans(string q = "apple", string fromLang = "en", string toLang = "zh")
         {
-            //q = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(q));
+            q = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(q));
             Random rand = new Random();
             var salt = rand.Next(32768, 65536);
             var sign = appid + q + salt.ToString() + secretKey;
@@ -37,7 +37,7 @@ namespace SubtitleTranslation
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(result);
+                    //Console.WriteLine(result);
                     return result;
                     //Product product = await response.Content.ReadAsAsync>Product>();
                     //Console.WriteLine("{0}\t${1}\t{2}", product.Name, product.Price, product.Category);

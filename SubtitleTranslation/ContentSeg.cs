@@ -7,7 +7,16 @@ namespace SubtitleTranslation
 {
     public class ContentSeg : Segment
     {
-        List<Part> parts = new List<Part> { new NumPart(), new TimePart(), new LanguagePart(), new ReturnPart() };
+        LanguagePart lang = new LanguagePart();
+        List<Part> parts = null;
+
+        public string[] OriginalText { get { return lang.LanguageLines.ToArray(); } }
+
+        public ContentSeg()
+        {
+            parts = new List<Part> { new NumPart(), new TimePart(), lang, new ReturnPart() };
+        }
+
         protected override List<Part> Parts
         {
             get
@@ -23,6 +32,11 @@ namespace SubtitleTranslation
                 part.GetText(sb);
 
             }
+        }
+
+        internal void AddTranslation(string v)
+        {
+            lang.TranslationLines.Add(v);
         }
     }
 }
