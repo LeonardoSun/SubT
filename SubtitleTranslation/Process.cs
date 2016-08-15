@@ -98,39 +98,89 @@ namespace SubtitleTranslation
 
         public async Task TranslateFile()
         {
-            foreach (var sen in sentences)
+            int time = 0;
+            Start:
+            string fifties = string.Empty;
+            int senLength = 0;
+            for (int i = 0; i < sentences.Count - time * 50 && i < 50; i++, senLength++)
+            {
+                fifties += sentences[i + time * 50].Text + "\n";
+            }
+            fifties.TrimEnd('\n');
+            string[] ns;
+            try
+            {
+                string s = await Translate.Trans(fifties);
+                ns = TranslationResult.GetTranslatedTexts(s);
+            }
+            catch (Exception)
             {
                 try
                 {
-                    string s = await Translate.Trans(sen.Text);
-                    var ns = TranslationResult.GetTranslatedText(s);
-                    sen.SetTranslation(ns);
+                    string s = await Translate.Trans(fifties);
+                    ns = TranslationResult.GetTranslatedTexts(s);
                 }
                 catch (Exception)
                 {
                     try
                     {
-                        string s = await Translate.Trans(sen.Text);
-                        var ns = TranslationResult.GetTranslatedText(s);
-                        sen.SetTranslation(ns);
+                        string s = await Translate.Trans(fifties);
+                        ns = TranslationResult.GetTranslatedTexts(s);
                     }
                     catch (Exception)
                     {
-                        try
-                        {
-                            string s = await Translate.Trans(sen.Text);
-                            var ns = TranslationResult.GetTranslatedText(s);
-                            sen.SetTranslation(ns);
-                        }
-                        catch (Exception)
-                        {
-                            string s = await Translate.Trans(sen.Text);
-                            var ns = TranslationResult.GetTranslatedText(s);
-                            sen.SetTranslation(ns);
-                        }
+                        string s = await Translate.Trans(fifties);
+                        ns = TranslationResult.GetTranslatedTexts(s);
                     }
                 }
             }
+            if (ns.Length != senLength)
+            {
+                throw new NotImplementedException();
+            }
+            for (int i = 0; i < ns.Length; i++)
+            {
+                sentences[i + time * 50].SetTranslation(ns[i]);
+            }
+            if (ns.Length + time * 50 < sentences.Count)
+            {
+                time++;
+                goto Start;
+            }
+            //return;
+            //foreach (var sen in sentences)
+            //{
+            //    try
+            //    {
+            //        string s = await Translate.Trans(sen.Text);
+            //        var ns = TranslationResult.GetTranslatedText(s);
+            //        sen.SetTranslation(ns);
+            //    }
+            //    catch (Exception)
+            //    {
+            //        try
+            //        {
+            //            string s = await Translate.Trans(sen.Text);
+            //            var ns = TranslationResult.GetTranslatedText(s);
+            //            sen.SetTranslation(ns);
+            //        }
+            //        catch (Exception)
+            //        {
+            //            try
+            //            {
+            //                string s = await Translate.Trans(sen.Text);
+            //                var ns = TranslationResult.GetTranslatedText(s);
+            //                sen.SetTranslation(ns);
+            //            }
+            //            catch (Exception)
+            //            {
+            //                string s = await Translate.Trans(sen.Text);
+            //                var ns = TranslationResult.GetTranslatedText(s);
+            //                sen.SetTranslation(ns);
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         public void LoadFile(string path)

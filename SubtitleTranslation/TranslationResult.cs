@@ -49,5 +49,23 @@ namespace SubtitleTranslation
             }
             return result.trans_result[0].dst;
         }
+
+        public static string[] GetTranslatedTexts(string src)
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(TransResult));
+            List<byte> bytes = new List<byte>();
+            foreach (var item in src)
+            {
+                bytes.AddRange(BitConverter.GetBytes(item));
+            }
+            var result = (TransResult)ser.ReadObject(new MemoryStream(bytes.ToArray()));
+
+            List<string> lr = new List<string>();
+            foreach (var item in result.trans_result)
+            {
+                lr.Add(item.dst);
+            }
+            return lr.ToArray();
+        }
     }
 }
