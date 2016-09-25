@@ -28,10 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.comboBox_from = new System.Windows.Forms.ComboBox();
+            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox_to = new System.Windows.Forms.ComboBox();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.form1BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.stringValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -55,17 +68,79 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // comboBox_from
+            // 
+            this.comboBox_from.DataSource = this.stringValueBindingSource;
+            this.comboBox_from.DisplayMember = "Value";
+            this.comboBox_from.FormattingEnabled = true;
+            this.comboBox_from.Location = new System.Drawing.Point(75, 32);
+            this.comboBox_from.Name = "comboBox_from";
+            this.comboBox_from.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_from.TabIndex = 1;
+            this.comboBox_from.ValueMember = "Value";
+            // 
+            // form1BindingSource1
+            // 
+            this.form1BindingSource1.DataSource = typeof(SubtitleTranslation.Form1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "From:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "To:";
+            // 
+            // comboBox_to
+            // 
+            this.comboBox_to.DataSource = this.form1BindingSource1;
+            this.comboBox_to.FormattingEnabled = true;
+            this.comboBox_to.Location = new System.Drawing.Point(75, 68);
+            this.comboBox_to.Name = "comboBox_to";
+            this.comboBox_to.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_to.TabIndex = 3;
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(SubtitleTranslation.Form1);
+            // 
+            // form1BindingSource2
+            // 
+            this.form1BindingSource2.DataSource = typeof(SubtitleTranslation.Form1);
+            // 
+            // stringValueBindingSource
+            // 
+            this.stringValueBindingSource.DataSource = typeof(SubtitleTranslation.StringValue);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox_to);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox_from);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,6 +151,14 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox comboBox_from;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox_to;
+        private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.BindingSource form1BindingSource1;
+        private System.Windows.Forms.BindingSource form1BindingSource2;
+        private System.Windows.Forms.BindingSource stringValueBindingSource;
     }
 }
 

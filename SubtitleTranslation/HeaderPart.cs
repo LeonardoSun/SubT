@@ -16,7 +16,7 @@ namespace SubtitleTranslation
         {
             if (!string.Equals(line.Trim(), "WEBVTT"))
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException("not vtt");
             }
         }
     }

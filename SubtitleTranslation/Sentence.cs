@@ -32,6 +32,7 @@ namespace SubtitleTranslation
             }
             for (int i = 0; i < originalText.Length; i++)
             {
+                originalText[i] = originalText[i].Replace('–', '-');
                 var index = originalText[i].IndexOfAny(new char[] { '.', '?', '!' });
                 if (index != -1)
                 {

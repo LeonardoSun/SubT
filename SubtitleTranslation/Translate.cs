@@ -14,18 +14,20 @@ namespace SubtitleTranslation
         public static string myurl = "/api/trans/vip/translate";
         public static async Task<string> Trans(string q = "apple", string fromLang = "en", string toLang = "zh")
         {
-            q = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(q));
+            var bytes = Encoding.UTF8.GetBytes(q);
+            
+            q = Encoding.UTF8.GetString(bytes);
             Random rand = new Random();
             var salt = rand.Next(32768, 65536);
             var sign = appid + q + salt.ToString() + secretKey;
             MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] OutBytes = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(sign));
+            byte[] OutBytes = md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(sign));
             string signstr = "";
-             for (int i = 0; i < OutBytes.Length; i++)
-             {
-                 signstr += OutBytes[i].ToString("x2");
-             }
-             myurl = myurl + "?appid=" + appid + "&q=" + System.Web.HttpUtility.UrlEncode(q) + "&from=" + fromLang + "&to=" + toLang + "&salt=" + salt.ToString() + "&sign=" + signstr;
+            for (int i = 0; i < OutBytes.Length; i++)
+            {
+                signstr += OutBytes[i].ToString("x2");
+            }
+            myurl = myurl + "?appid=" + appid + "&q=" + System.Web.HttpUtility.UrlEncode(q) + "&from=" + fromLang + "&to=" + toLang + "&salt=" + salt.ToString() + "&sign=" + signstr;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://api.fanyi.baidu.com");
