@@ -9,13 +9,13 @@ namespace SubtitleTranslation
 {
     public class Translate
     {
-        public static string appid = "20160810000026568";
-        public static string secretKey = "xXCNghHXary5AEgwaAmU";
-        public static string myurl = "/api/trans/vip/translate";
+        public static readonly string appid = "20160810000026568";
+        public static readonly string secretKey = "xXCNghHXary5AEgwaAmU";
         public static async Task<string> Trans(string q = "apple", string fromLang = "en", string toLang = "zh")
         {
+            string myurl = "/api/trans/vip/translate";
             var bytes = Encoding.UTF8.GetBytes(q);
-            
+
             q = Encoding.UTF8.GetString(bytes);
             Random rand = new Random();
             var salt = rand.Next(32768, 65536);

@@ -55,6 +55,10 @@
     <Compile Include="TranslationResultTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConsoleProcess\ConsoleProcess.csproj">
+      <Project>{c8ba1c0c-9af8-4c5b-aae6-0f8ad105d650}</Project>
+      <Name>ConsoleProcess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SubtitleTranslation\SubtitleTranslation.csproj">
       <Project>{1F2715CF-B629-45F2-80EB-5E605FEDB00A}</Project>
       <Name>SubtitleTranslation</Name>

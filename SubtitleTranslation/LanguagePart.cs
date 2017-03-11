@@ -36,7 +36,8 @@ namespace SubtitleTranslation
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    //throw new NotImplementedException();
+                    LanguageLines.Add(string.Empty);
                 }
             }
             LanguageLines.Add(line);

@@ -104,11 +104,17 @@ namespace SubtitleTranslation
                 seg.GetText(sb);
             }
             FileInfo fi = new FileInfo(path);
-            using (StreamWriter sw = new StreamWriter(fi.Open(FileMode.OpenOrCreate)))
+            var fileContent = Encoding.Convert(Encoding.UTF8, Encoding.Default, Encoding.UTF8.GetBytes(sb.ToString()));
+            using (var stream = fi.OpenWrite())
             {
-                await sw.WriteAsync(sb.ToString());
+                await stream.WriteAsync(fileContent, 0, fileContent.Length);
+
             }
-            //File.WriteAllText(path, sb.ToString());
+            //using (StreamWriter sw = new StreamWriter(fi.Open(FileMode.OpenOrCreate)))
+            //{
+            //    await sw.WriteAsync(Encoding.UTF8.GetString(fileContent));
+            //}
+            ////File.WriteAllText(path, sb.ToString());
         }
 
         public async Task TranslateFile(string fromLang = "en", string toLang = "zh")
@@ -207,6 +213,9 @@ namespace SubtitleTranslation
 
         public void ParseFile(string[] lines)
         {
+#if DEBUG
+            int cur = 0;
+#endif
             foreach (var line in lines)
             {
                 try
@@ -226,6 +235,9 @@ namespace SubtitleTranslation
                     }
 
                 }
+#if DEBUG
+                cur++;
+#endif
             }
             if (!Segments.Contains(CurrentSeg))
             {

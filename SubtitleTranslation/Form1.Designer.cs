@@ -31,26 +31,28 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyConvExtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.comboBox_from = new System.Windows.Forms.ComboBox();
+            this.stringValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_to = new System.Windows.Forms.ComboBox();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.stringValueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.onlyConvExtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 25);
@@ -64,9 +66,17 @@
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
+            // onlyConvExtToolStripMenuItem
+            // 
+            this.onlyConvExtToolStripMenuItem.Name = "onlyConvExtToolStripMenuItem";
+            this.onlyConvExtToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
+            this.onlyConvExtToolStripMenuItem.Text = "JustConvToSrt";
+            this.onlyConvExtToolStripMenuItem.Click += new System.EventHandler(this.onlyConvExtToolStripMenuItem_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Multiselect = true;
             // 
             // comboBox_from
             // 
@@ -78,6 +88,10 @@
             this.comboBox_from.Size = new System.Drawing.Size(121, 20);
             this.comboBox_from.TabIndex = 1;
             this.comboBox_from.ValueMember = "Value";
+            // 
+            // stringValueBindingSource
+            // 
+            this.stringValueBindingSource.DataSource = typeof(SubtitleTranslation.StringValue);
             // 
             // form1BindingSource1
             // 
@@ -118,10 +132,6 @@
             // 
             this.form1BindingSource2.DataSource = typeof(SubtitleTranslation.Form1);
             // 
-            // stringValueBindingSource
-            // 
-            this.stringValueBindingSource.DataSource = typeof(SubtitleTranslation.StringValue);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -137,10 +147,10 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stringValueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +169,7 @@
         private System.Windows.Forms.BindingSource form1BindingSource1;
         private System.Windows.Forms.BindingSource form1BindingSource2;
         private System.Windows.Forms.BindingSource stringValueBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem onlyConvExtToolStripMenuItem;
     }
 }
 

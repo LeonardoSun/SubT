@@ -18,8 +18,13 @@ namespace SubtitleTranslation.Tests
 
             if (string.IsNullOrWhiteSpace(result))
             {
-                Assert.Fail(); 
+                Assert.Fail();
             }
+        }
+        [TestMethod()]
+        public void ConsoleInput()
+        {
+            var p = new ConsoleProcess.Program();
         }
     }
 }
